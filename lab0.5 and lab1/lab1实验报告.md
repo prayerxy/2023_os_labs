@@ -307,7 +307,7 @@ int kern_init(void) {
 
 ### 5.程序的正确性验证
 
-<img src="1.png" style="zoom: 80%;" />
+<img src="1_1.png" style="zoom: 80%;" />
 
 如上图所示，成功完成要求。在打印10次`100 ticks`后关机。
 
@@ -321,7 +321,7 @@ int kern_init(void) {
 
 ### 1.处理中断的流程
 
-> 中断分类为：异常、陷入、外部中断(时钟、I/O设备等)
+> 中断分类为：异常、陷入、外部中断(时钟、I/O设备等）
 
 其中异常与陷入都是CPU在执行指令中遇到的，而外部中断是CPU的执行过程被外设发来的信号所打断。
 
@@ -496,7 +496,7 @@ STORE s0, 2*REGBYTES(sp) #将旧的sp指针的值储存进栈中
 
 - `csrw sscratch, sp`是将`sp`的指向地址赋值给`sscratch`寄存器
 
-- `csrrw s0, sscratch, x0`将`sscratch`寄存器的值赋值给`s0`并将`sscratch`寄存器置0。目的是保存旧的栈指针至`s0`，通过`s0`来将旧的栈指针的值加载到保存上下文的区域即，最终实现旧的栈指针的保存。
+- `csrrw s0, sscratch, x0`将`sscratch`寄存器的值赋值给`s0`并将`sscratch`寄存器置0。目的是保存旧的栈指针至`s0`，通过`s0`来将旧的栈指针的值加载到保存上下文的区域，最终实现旧的栈指针的保存。
 
 **保存旧的sp值，是为了恢复上下文的时候，可以恢复sp的值至原来的位置，释放栈的空间**
 
@@ -611,7 +611,7 @@ void exception_handler(struct trapframe *tf) {
 
 ### 3.成功性验证：
 
-<img src="2.png" alt="2" style="zoom: 67%;" />
+<img src="1_2.png" alt="2" style="zoom: 67%;" />
 
 
 
