@@ -27,7 +27,9 @@ int kern_init(void) {
     // grade_backtrace();
 
     idt_init();  // init interrupt descriptor table
-
+    
+    asm volatile("mret");
+    asm volatile("ebreak");
     // rdtime in mbare mode crashes
     clock_init();  // init clock interrupt
 
