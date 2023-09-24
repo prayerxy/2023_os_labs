@@ -26,15 +26,14 @@ int kern_init(void) {
 
     // grade_backtrace();
     idt_init();  // init interrupt descriptor table
-    clock_init();  // init clock interrupt
-    intr_enable();  // enable irq interrupt
-    /*__asm__ volatile ("mret");
+     __asm__ volatile ("mret");
 
     // Enable Machine Breakpoint (调试模式)
     __asm__ volatile ("ebreak");
-    // rdtime in mbare mode crashes
     clock_init();  // init clock interrupt
-    */
+    intr_enable();  // enable irq interrupt
+   
+
     while (1)
         ;
 }
