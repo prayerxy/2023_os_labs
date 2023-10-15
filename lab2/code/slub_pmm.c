@@ -263,7 +263,6 @@ slab_destroy(struct cache_t *cachep, struct slab_t *slab) {
 
 
 //创建仓库，size为对象的size。
-// cache_create - create a cache
 struct cache_t *
 cache_create(size_t size) {
     assert(size <= (PGSIZE - 2));
