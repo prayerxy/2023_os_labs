@@ -188,11 +188,7 @@ buddy_system_alloc_pages(size_t n) {
 
 ### 2.4 内存释放
 
-$$
-index = offset + buddy\rightarrow size - 1;
-$$
 
-<img src="b_4.png" style="zoom:50%;"/>
 
 ```c
 static void
@@ -244,17 +240,18 @@ buddy_system_free_pages(struct Page *base, size_t n) { //这里的n没有用，�
 
 这里的思路与内存分配的一致，具体实现逻辑参考的是指导书给出的链接。
 
-1. $$
-   index = offset + buddy\rightarrow size - 1;
-   $$
+​		1.
+$$
+index = offset + buddy\rightarrow size - 1;
+$$
 
-   <img src="b_4.png" style="zoom:50%;"/>
+<img src="b_4.png" style="zoom:50%;"/>
 
-   给出offset，我们求解与之对应的二叉树最底层的节点。
+​		给出offset，我们求解与之对应的二叉树最底层的节点。
 
-2. 那么已经知道最底层的相同偏移量的节点的index，我们只需要向上溯源找到node_size为0的节点，即可找到被分配的那个节点，再对它进行恢复即可。这里采用的是一个for循环，循环完成后可以得到被分配节点的index。
+​		2.  那么已经知道最底层的相同偏移量的节点的index，我们只需要向上溯源找到node_size为0的节点，即可找到被分配的那个节点，		再对它进行恢复即可。这里采用的是一个for循环，循环完成后可以得到被分配节点的index。
 
-3. 在这里同样要对被分配节点向上回溯。这里要观察父节点是否也可以合并，若可以合并那么就扩大node_size即可。
+​		3.  在这里同样要对被分配节点向上回溯。这里要观察父节点是否也可以合并，若可以合并那么就扩大node_size即可。
 
 ### 2.5 正确性验证思路
 
