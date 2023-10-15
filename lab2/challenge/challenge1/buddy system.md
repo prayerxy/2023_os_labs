@@ -188,6 +188,12 @@ buddy_system_alloc_pages(size_t n) {
 
 ### 2.4 内存释放
 
+$$
+index = offset + buddy\rightarrow size - 1;
+$$
+
+
+
 ```c
 static void
 buddy_system_free_pages(struct Page *base, size_t n) { //这里的n没有用，只是统一接口
