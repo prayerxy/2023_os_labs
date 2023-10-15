@@ -175,7 +175,7 @@ buddy_system_alloc_pages(size_t n) {
 4. 成功找到index，将longest[index]赋值为0，代表已经被分配。然后因为alloc返回的是page对应的地址，我们要获取偏移值(也就是相对于begin_page的页数量偏移)，所以我们要获取offset。
 
 5. $$
-   offset = (index + 1) * node\_size - buddy\rightarrow size
+   offset = (index + 1) * node \underline{}size - buddy\rightarrow size
    $$
 
    <img src="b_3.jpg" style="zoom: 45%;" />
@@ -239,6 +239,8 @@ buddy_system_free_pages(struct Page *base, size_t n) { //这里的n没有用，�
 ```
 
 这里的思路与内存分配的一致，具体实现逻辑参考的是指导书给出的链接。
+
+​		1.
 
 
 $$
