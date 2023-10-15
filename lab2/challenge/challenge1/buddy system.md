@@ -240,7 +240,7 @@ buddy_system_free_pages(struct Page *base, size_t n) { //这里的n没有用，�
 
 这里的思路与内存分配的一致，具体实现逻辑参考的是指导书给出的链接。
 
-​		1.
+
 $$
 index = offset + buddy\rightarrow size - 1;
 $$
