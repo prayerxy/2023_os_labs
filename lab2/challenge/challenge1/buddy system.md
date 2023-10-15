@@ -242,9 +242,9 @@ buddy_system_free_pages(struct Page *base, size_t n) { //这里的n没有用，�
    index = offset + buddy\rightarrow size - 1;
    $$
 
-   给出offset，我们求解与之对应的二叉树最底层的节点。
-
    <img src="b_4.png" style="zoom:50%;"/>
+
+   给出offset，我们求解与之对应的二叉树最底层的节点。
 
 2. 那么已经知道最底层的相同偏移量的节点的index，我们只需要向上溯源找到node_size为0的节点，即可找到被分配的那个节点，再对它进行恢复即可。这里采用的是一个for循环，循环完成后可以得到被分配节点的index。
 
