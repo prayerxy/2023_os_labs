@@ -192,7 +192,7 @@ $$
 index = offset + buddy\rightarrow size - 1;
 $$
 
-
+<img src="b_4.png" style="zoom:50%;"/>
 
 ```c
 static void
