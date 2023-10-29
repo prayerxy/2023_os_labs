@@ -107,7 +107,7 @@ static void print_now_list(struct mm_struct *mm){
     list_entry_t *head=(list_entry_t*) mm->sm_priv;
     list_entry_t *entry = list_prev(head);
     cprintf("检查链表元素顺序: \n");
-    cprintf("开始从新到老打印: \n");
+    cprintf("开始从老到新打印: \n");
     while(entry != head) {
         struct Page *page = le2page(entry, pra_page_link);
         cprintf("%x\n",page->pra_vaddr);
