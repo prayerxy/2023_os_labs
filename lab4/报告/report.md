@@ -17,7 +17,7 @@ if (*ptep == 0) { // if the phy addr isn't exist, then alloc a page & map the ph
             goto failed;
         }
     } else {
-        /*LAB3 EXERCISE 3: 2113663
+        /*LAB3 EXERCISE 3: 2113665
         * 请你根据以下信息提示，补充函数
         * 现在我们认为pte是一个交换条目，那我们应该从磁盘加载数据并放到带有phy addr的页面，
         * 并将phy addr与逻辑addr映射，触发交换管理器记录该页面的访问情况
@@ -416,7 +416,7 @@ do_fork(uint32_t clone_flags, uintptr_t stack, struct trapframe *tf) {
         goto fork_out;
     }
     ret = -E_NO_MEM;   //内存短缺
-    //LAB4:EXERCISE2 2113663
+    //LAB4:EXERCISE2 2113663&2113665
     /*
      * Some Useful MACROs, Functions and DEFINEs, you can use them in below implementation.
      * MACROs or Functions:
@@ -601,7 +601,7 @@ proc_run(struct proc_struct *proc) {
 
 
 
-### 执行结果
+## 执行结果
 
 #### make qemu执行结果
 
