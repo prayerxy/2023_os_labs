@@ -642,14 +642,14 @@ proc_run(struct proc_struct *proc) {
 ```c
 static inline bool __intr_save(void) {
     if (read_csr(sstatus) & SSTATUS_SIE) {
-        intr_disable();
+        intr_disable();//禁用中断
         return 1;
     }
     return 0;
 }
 static inline void __intr_restore(bool flag) {
     if (flag) {
-        intr_enable();
+        intr_enable();//如果之前禁用中断了，那么现在启用中断
     }
 }
 #define local_intr_save(x)      do { x = __intr_save(); } while (0)
