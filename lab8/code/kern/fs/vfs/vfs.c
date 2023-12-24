@@ -11,7 +11,7 @@ static semaphore_t bootfs_sem;
 //根目录"/"对应的Inode，在initmain执行得到赋值
 static struct inode *bootfs_node = NULL;
 
-extern void vfs_devlist_init(voi d);
+extern void vfs_devlist_init(void);
 
 // __alloc_fs - allocate memory for fs, and set fs type
 struct fs *
